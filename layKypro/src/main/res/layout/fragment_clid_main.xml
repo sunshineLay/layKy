@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/ten_dp">
+    <com.lay.laykypro.adapter.SuperEasyRefreshLayout
+        android:id="@+id/swipe_refresh_clidfragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.lay.laykypro.adapter.ClidFragment.WrapRecyclerView
+            android:id="@+id/recy_clidfragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+        </com.lay.laykypro.adapter.ClidFragment.WrapRecyclerView>
+    </com.lay.laykypro.adapter.SuperEasyRefreshLayout>
+
+
+</RelativeLayout>

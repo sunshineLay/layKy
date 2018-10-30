@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/ten_dp">
+    <ImageView
+        android:id="@+id/img_banner3_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+       />
+    <TextView
+        android:id="@+id/tv_banner3_rightTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="广告"
+        android:textColor="@color/colorBackWhite"
+        android:textStyle="normal"
+        android:textSize="15sp"
+        android:layout_alignParentRight="true"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_banner3_image">
+        <include
+            layout="@layout/item_clidfragment_merge_brief"></include>
+    </RelativeLayout>
+
+
+</RelativeLayout>

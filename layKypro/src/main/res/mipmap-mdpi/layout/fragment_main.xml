@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/imgic_fragmain_main"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:src="@drawable/sanheng"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"/>
+    <ImageView
+        android:id="@+id/imgsearch_fragmain_main"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:src="@drawable/search"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="10dp"/>
+    <HorizontalScrollView
+        android:id="@+id/scroll_fragmain_main"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/imgic_fragmain_main"
+        android:layout_toLeftOf="@id/imgsearch_fragmain_main"
+        android:scrollbars="none"
+        >
+        <LinearLayout
+            android:id="@+id/line_fragmain_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+
+        </LinearLayout>
+
+
+
+    </HorizontalScrollView>
+    <View
+        android:id="@+id/div_bar_fragmain"
+        android:layout_width="match_parent"
+        android:layout_height="3px"
+        android:layout_below="@id/scroll_fragmain_main"
+        android:background="@color/colorBackWhite">
+
+    </View>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_fragmain_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/scroll_fragmain_main"
+        >
+
+    </android.support.v4.view.ViewPager>
+
+</RelativeLayout>

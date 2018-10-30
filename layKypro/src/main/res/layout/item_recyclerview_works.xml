@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.lay.laykypro.view.CustomView.CircleImageView
+        android:id="@+id/cirimg_works_icon"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="12dp"
+        android:src="@mipmap/ic_launcher"
+        app:civ_border_color="@color/colorBackBlack"
+        app:civ_border_width="1dp" />
+
+
+    <TextView
+        android:id="@+id/tv_works_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="79dp"
+        android:layout_marginTop="5dp"
+        android:text="最近发布"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_works_fb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_works_title"
+        android:layout_alignLeft="@+id/tv_works_title"
+        android:text="发布："
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_works_fbc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_works_fb"
+        android:layout_toRightOf="@+id/tv_works_fb"
+        android:text="你是谁你历史历史书哈哈"
+        android:textStyle="bold"
+        android:textSize="13sp"/>
+
+    <TextView
+        android:id="@+id/tv_works_fbhz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_alignTop="@+id/tv_works_fbc"
+        android:layout_toRightOf="@+id/tv_works_fbc"
+        android:text="..."
+        android:layout_marginLeft="8dp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tv_works_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cirimg_works_icon"
+        android:layout_marginLeft="@dimen/twof_dp"
+        android:layout_marginRight="@dimen/twof_dp"
+        android:text="你好error: resource previously defined here."
+        android:textSize="18sp"
+        android:lines="3"
+        android:ellipsize="end"/>
+
+    <TextView
+        android:id="@+id/tv_works_label01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_works_content"
+        android:layout_marginRight="@dimen/twof_dp"
+        android:layout_marginTop="@dimen/ten_dp"
+        android:layout_alignLeft="@+id/tv_works_content"
+        android:background="#33ccff"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tv_works_label02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_alignTop="@+id/tv_works_label01"
+        android:layout_toRightOf="@+id/tv_works_label01"
+        android:layout_marginRight="@dimen/twof_dp"
+        android:text="TextView"
+        android:background="#ffcc00"/>
+
+    <TextView
+        android:id="@+id/tv_woks_label03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_works_label01"
+        android:layout_toRightOf="@+id/tv_works_label02"
+        android:text="TextView"
+        android:background="#ff0033"/>
+
+<FrameLayout
+    android:id="@+id/frame_works_surface"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/tv_works_label01">
+    <ImageView
+        android:id="@+id/img_works_play"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/tenf_dp"
+        android:layout_marginRight="@dimen/tenf_dp"
+        android:layout_height="200dp"
+        android:scaleType="center"
+        android:src="@drawable/play"
+        android:visibility="visible"/>
+
+</FrameLayout>
+    <TextView
+        android:id="@+id/tv_works_zan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/like"
+        android:layout_below="@+id/frame_works_surface"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="@dimen/fivef_dp"
+        android:layout_marginLeft="20dp"
+        android:text="0"
+        android:textSize="13sp"/>
+    <TextView
+        android:id="@+id/tv_works_mess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/message"
+        android:text="0"
+        android:layout_toRightOf="@+id/tv_works_zan"
+        android:layout_alignTop="@+id/tv_works_zan"
+        android:layout_marginRight="@dimen/fivef_dp"
+        android:textSize="13sp"
+        />
+    <TextView
+        android:id="@+id/tv_works_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="16:43"
+        android:layout_toRightOf="@+id/tv_works_mess"
+        android:layout_alignTop="@+id/tv_works_zan"
+        android:layout_marginRight="@dimen/fivef_dp"
+        android:textSize="13sp"
+        />
+    <TextView
+        android:id="@+id/tv_works_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/up"
+        android:layout_alignTop="@+id/tv_works_zan"
+        android:layout_toRightOf="@+id/tv_works_time"
+        android:textSize="13sp"
+
+        />
+
+
+</RelativeLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/recy_title_watchrecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="观看记录"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:drawableLeft="@drawable/watchright"
+        android:drawablePadding="100dp"
+        />
+    <View
+        android:id="@+id/div_tab_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/colorBackWhite"
+        android:layout_below="@id/recy_title_watchrecord"
+        />
+
+    <com.lay.laykypro.adapter.ClidFragment.WrapRecyclerView
+        android:id="@+id/recy_watchrecord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recy_title_watchrecord">
+
+    </com.lay.laykypro.adapter.ClidFragment.WrapRecyclerView>
+    <TextView
+        android:id="@+id/tv_watch_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="当前暂无记录"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/ten_dp"
+        />
+</RelativeLayout>

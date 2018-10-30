@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="one_dp">1dp</dimen>
+    <dimen name="two_dp">2dp</dimen>
+    <dimen name="three_dp">3dp</dimen>
+    <dimen name="five_dp">5dp</dimen>
+    <dimen name="ten_dp">10dp</dimen>
+    <dimen name="tenf_dp">15dp</dimen>
+    <dimen name="twenty_dp">20dp</dimen>
+    <dimen name="twof_dp">25dp</dimen>
+    <dimen name="sixf_dp">65dp</dimen>
+    <dimen name="fourfive_dp">45dp</dimen>
+    <dimen name="fivef_dp">55dp</dimen>
+
+    <!--VideoActivity中的title大小-->
+    <dimen name="video_content_dp">25dp</dimen>
+    <!--VideoActivity中的marginLeft大小-->
+    <dimen name="video_marginLeft_dp">10dp</dimen>
+    <!--VideoActivity中的marginTop大小-->
+    <dimen name="video_marginTop_dp">5dp</dimen>
+    <!--VideoActivity中的marginBottom大小-->
+    <dimen name="video_marginBottom_dp">10dp</dimen>
+    <!--VideoActivity中的margin大小-->
+    <dimen name="video_margin_dp">10dp</dimen>
+    <!--VideoActivity中的marginMax大小-->
+    <dimen name="video_marginMax_dp">30dp</dimen>
+    <!--VideoActivity中的marginSub大小-->
+    <dimen name="video_marginSub_dp">3dp</dimen>
+</resources>

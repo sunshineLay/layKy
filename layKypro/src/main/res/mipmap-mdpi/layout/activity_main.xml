@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.Activity.MainActivity">
+    <LinearLayout
+        android:id="@+id/line_main"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorBackWhite">
+        <TextView
+            android:id="@+id/tv_iconMain_main"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/mainic_selecter"
+            android:gravity="center"
+            android:text="首页"/>
+        <TextView
+            android:id="@+id/tv_iconFocus_main"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/focusic_selecter"
+            android:gravity="center"
+            android:text="关注"/>
+        <TextView
+            android:id="@+id/tv_iconNo_main"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/no_selecter"
+            android:gravity="center"
+            android:text="通知"/>
+        <TextView
+            android:id="@+id/tv_iconMy_main"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/my_selecter"
+            android:gravity="center"
+            android:text="我的"/>
+
+
+
+    </LinearLayout>
+    <View
+        android:id="@+id/div_tab_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/colorBackWhite"
+        android:layout_above="@id/line_main"
+        />
+    <FrameLayout
+        android:id="@+id/frame_mian_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/line_main"
+       >
+
+    </FrameLayout>
+
+
+
+</RelativeLayout>

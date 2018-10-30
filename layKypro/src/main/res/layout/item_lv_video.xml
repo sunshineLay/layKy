@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/video_margin_dp">
+    <ImageView
+        android:id="@+id/video_img"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_weight="1"
+        android:src="@mipmap/ic_launcher"/>
+    <RelativeLayout
+        android:id="@+id/video_Re"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_weight="1"
+        android:background="@color/colorAccent">
+        <TextView
+            android:id="@+id/video_lv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorBackWhite"/>
+        <TextView
+            android:id="@+id/video_lv_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#开胃"
+            android:textSize="20sp"
+            android:textColor="@color/colorBackWhite"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/video_margin_dp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

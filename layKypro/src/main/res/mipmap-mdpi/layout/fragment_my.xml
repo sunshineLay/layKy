@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lin_root_fragmy"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/Re_head_fragmy"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        >
+        <ImageView
+            android:id="@+id/img_head_phset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/phset"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="3dp"
+            />
+
+        <com.lay.kaiyandemo.view.CustomView.CircleImageView
+            android:id="@+id/img_head_head"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:src="@mipmap/ic_launcher"
+            app:civ_border_width="2dp"
+            app:civ_border_color="@color/colorPrimary"/>
+        <TextView
+            android:id="@+id/tv_head_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amazing~YI"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/img_head_head"
+            android:layout_marginTop="5dp"
+            />
+        <TextView
+            android:id="@+id/tv_head_mymain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="进入我的主页>>"
+            android:textSize="15sp"
+            android:textStyle="normal|italic"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/tv_head_name"
+            android:layout_marginTop="2dp"/>
+
+        <TextView
+            android:id="@+id/tv_head_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="喜欢"
+            android:drawableLeft="@drawable/like"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            android:layout_below="@id/tv_head_mymain"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="@dimen/three_dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="|"
+            android:textSize="20sp"
+            android:layout_below="@id/tv_head_mymain"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_head_cache"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="缓存"
+            android:drawableLeft="@drawable/cache"
+            android:layout_below="@id/tv_head_mymain"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="@dimen/five_dp"
+            />
+
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/Sc_body_fragmy"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5">
+
+        <RelativeLayout
+            android:id="@+id/Re_body_sc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_item01_focus"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:text="我的关注"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_item02_record"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_below="@id/tv_item01_focus"
+                android:gravity="center"
+                android:text="观看记录"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_item03_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_below="@id/tv_item02_record"
+                android:gravity="center"
+                android:text="意见反馈"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_item04_contribute"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_below="@id/tv_item03_feedback"
+                android:gravity="center"
+                android:text="我要投稿"
+                android:textSize="15sp" />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/Re_foot_fragmy"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/tv_num_Refoot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/version_num"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+
+
+    </RelativeLayout>
+
+</LinearLayout>
