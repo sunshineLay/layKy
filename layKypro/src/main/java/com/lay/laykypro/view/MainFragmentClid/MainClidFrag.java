@@ -6,4 +6,6 @@ public interface MainClidFrag extends BaseView{
     void showClidListData(String jsonString);
 
     void showMainClidAddListData(String jsonString);
+
+    void disProgressDialog();
 }

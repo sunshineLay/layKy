@@ -16,6 +16,14 @@ public class MainClidPresenter extends BasePresenter<MainClidFragment>implements
                         mainClidFragment.showClidListData(tData);
                     }
                 }
+
+                @Override
+                public void requestComplete() {
+                    MainClidFragment view = getView();
+                    if (view != null) {
+                        view.disProgressDialog();
+                    }
+                }
             });
     }
 
@@ -29,35 +37,38 @@ public class MainClidPresenter extends BasePresenter<MainClidFragment>implements
                     mainClidFragment.showClidListData(tData);
                 }
             }
+
+            @Override
+            public void requestComplete() {
+                MainClidFragment view = getView();
+                if(view!=null){
+                    view.disProgressDialog();
+                }
+
+            }
         });
 
     }
 
     @Override
-    public void getMainClidAddDyListData(String path, int start) {
-        new MainClidFragModel().getMainClidAddDyListData(path, start, new IBackRequestCallBack<String>() {
+    public void getMainClidAddTJListData(int page) {
+        new MainClidFragModel().getMainClidAddTJListData(page, new IBackRequestCallBack<String>() {
             @Override
             public void requestSuccess(String tData) {
                 MainClidFragment view = getView();
-                if(view!=null){
+                if (view != null) {
                     view.showMainClidAddListData(tData);
                 }
+            }
+
+            @Override
+            public void requestComplete() {
+
             }
         });
     }
 
-    @Override
-    public void getMainClidAddListData(String root, String path, int start) {
-        new MainClidFragModel().getMainClidAddListData(root, path, start, new IBackRequestCallBack<String>() {
-            @Override
-            public void requestSuccess(String tData) {
-                MainClidFragment view = getView();
-                if(view!=null){
-                    view.showMainClidAddListData(tData);
-                }
-            }
-        });
-
-    }
 
 }
+
+

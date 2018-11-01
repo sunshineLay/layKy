@@ -13,7 +13,7 @@ public class RecyHorizonBannerAdapter extends BaseRecyclerViewAdapter<String> {
     }
 
     @Override
-    public void convert(ViewHolder holder, String itemData,int position) {
+    public void convert(ViewHolder holder, String itemData) {
         holder.setImageFromUrl(R.id.horizontal_img,itemData);
 
     }

@@ -7,7 +7,6 @@ public interface MainClidModel {
 
     void getClidListData(String root,String path,IBackRequestCallBack<String> stringIBackRequestCallBack);
 
-    void getMainClidAddDyListData(String path, int start,IBackRequestCallBack<String> stringIBackRequestCallBack);
+    void getMainClidAddTJListData(int page, IBackRequestCallBack<String> stringIBackRequestCallBack);
 
-    void getMainClidAddListData(String root,String path, int start,IBackRequestCallBack<String> stringIBackRequestCallBack);
 }

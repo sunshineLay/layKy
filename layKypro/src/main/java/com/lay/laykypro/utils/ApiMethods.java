@@ -1,7 +1,5 @@
 package com.lay.laykypro.utils;
 
-import android.graphics.Movie;
-
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -17,11 +15,15 @@ public class ApiMethods {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(observer);
     }
-    public static void getMainClidAddDyListData(String path, int start, Observer<String> observer) {
-        ApiMethods.ApiSubscribe(RetrofitUtils.getApiService().getMainClidAddDyListData(path, start, 5), observer);
+
+    //创意  这个会报403错误，应该是权限不够的原因
+    public static void getMainClidAddCyListData(String root, String path, int start, Observer<String> observer) {
+        ApiMethods.ApiSubscribe(RetrofitUtils.getApiService().getMainClidAddCyListData(root, path, start, 5), observer);
     }
-    public static void getMainClidAddListData(String root, String path,int start, Observer<String> observer) {
-        ApiMethods.ApiSubscribe(RetrofitUtils.getApiService().getMainClidAddListData(root,path, start, 5), observer);
+
+    //推荐 写一个展示功能即可
+    public static void getMainClidAddTJListData(int page, Observer<String> observer) {
+        ApiMethods.ApiSubscribe(RetrofitUtils.getApiService().getMainClidAddTJListData(page, true, 6), observer);
     }
 
 }

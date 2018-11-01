@@ -22,6 +22,11 @@ public class WatchListDataPresenter extends BasePresenter<WatchRecordActivity> i
                     view.showDataFromSQL(tData);
                 }
             }
+
+            @Override
+            public void requestComplete() {
+
+            }
         });
 
     }

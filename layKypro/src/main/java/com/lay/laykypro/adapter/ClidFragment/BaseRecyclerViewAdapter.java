@@ -48,7 +48,7 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
     }
     @Override
     public void onBindViewHolder(final BaseRecyclerViewAdapter.ViewHolder holder, final int position) {
-        convert(holder,tList.get(position),position);
+        convert(holder, tList.get(position));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,7 +79,7 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
         return super.getItemViewType(position);
     }
 
-    public abstract  void convert(ViewHolder holder, T itemData,int position);
+    public abstract void convert(ViewHolder holder, T itemData);
 
     /**
      * 重置数据,下拉刷新时使用

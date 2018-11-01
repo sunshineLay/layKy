@@ -1,6 +1,7 @@
 package com.lay.laykypro.view.MainFragmentClid;
 
 
+import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,7 +9,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,10 +47,11 @@ public class MainClidFragment extends BaseFragment<BaseView, MainClidPresenter> 
     @BindView(R.id.recy_clidfragment)
     WrapRecyclerView recyClidfragment;
 
-
     private Unbinder unbinder;
     private MainClidRecyclerViewAdapter mainClidRecyclerViewAdapter;
-//    private int start = 0;
+    private int page = 1;//推荐页
+    private int count = 0;//主页 其他页也可以如此判断。
+    private ProgressDialog progressDialog;
 
     @Nullable
     @Override
@@ -77,9 +78,12 @@ public class MainClidFragment extends BaseFragment<BaseView, MainClidPresenter> 
         super.onFragmentVisibleChange(isVisible);
         if (isVisible) {
             //从不可见到可见
+            //对话框显示
+            progressDialog = ProgressDialog.show(getActivity(), "资源加载中", "正在加载，请稍后...", false, true);
         } else {
             //从可见到不可见
-
+            //对话框隐藏
+            progressDialog.dismiss();
         }
     }
 
@@ -101,9 +105,6 @@ public class MainClidFragment extends BaseFragment<BaseView, MainClidPresenter> 
         //将数据解析到集合中去
         try {
             List<HashMap<String, Object>> mainClidArrayList = getListFromJsonString(jsonString);
-            HashMap<String, Object> stringObjectHashMap = mainClidArrayList.get(0);
-            //优化RecyclerView 的Adapter，将数据设置上去
-            Log.e(TAG, "showClidListData: " + mainClidArrayList.size() + (String) stringObjectHashMap.get("type"));//数量显示正确，可以尝试解析
             initView(mainClidArrayList);
 //            initGridView(mainClidArrayList);
         } catch (JSONException e) {
@@ -123,6 +124,11 @@ public class MainClidFragment extends BaseFragment<BaseView, MainClidPresenter> 
         }
 
 
+    }
+
+    @Override
+    public void disProgressDialog() {
+        progressDialog.dismiss();
     }
 
     private List<HashMap<String, Object>> getListFromJsonString(String jsonString) throws JSONException {
@@ -466,8 +472,8 @@ public class MainClidFragment extends BaseFragment<BaseView, MainClidPresenter> 
         WrapRecyclerAdapter wrapRecyclerAdapter = new WrapRecyclerAdapter(mainClidRecyclerViewAdapter);
         recyClidfragment.setAdapter(wrapRecyclerAdapter);
 
-        View footerView = LayoutInflater.from(getActivity()).inflate(R.layout.item_video_footer, recyClidfragment, false);
-        recyClidfragment.addFooterView(footerView);
+//        View footerView = LayoutInflater.from(getActivity()).inflate(R.layout.item_video_footer, recyClidfragment, false);
+//        recyClidfragment.addFooterView(footerView);
         //设置分割线
         recyClidfragment.addItemDecoration(new MainClidItemDecoration(getActivity(), R.drawable.itemdecoration));
 
@@ -523,54 +529,75 @@ public class MainClidFragment extends BaseFragment<BaseView, MainClidPresenter> 
                         //在这里请求数据
                         Bundle clidBundle = getArguments();
                         Integer num = (Integer) clidBundle.get("Num");
-//                        getListAddDataFromNum(num, start);
-                        Toast.makeText(getActivity(),""+num,Toast.LENGTH_SHORT).show();
+                        getListAddDataFromNum(num, page, count);
+                        if (num == 0) {
+                            count += 1;
+                        }
+                        if (num == 1) {
+                            page += 1;
+                        }
+
+
                     }
                 }, 2000);
             }
         });
     }
 
-    private void getListAddDataFromNum(int num, int start) {
+    private void getListAddDataFromNum(int num, int page, int count) {
         switch (num) {
             case 0:
                 //发现
 //                basePresenter.getMainClidAddDyListData("discovery",start);//因为接口变了，所以改一下
+                if (count > 0) {
+                    Toast.makeText(getActivity(), "已经到底了！" + num, Toast.LENGTH_SHORT).show();
+                } else {
+                    View footerView = LayoutInflater.from(getActivity()).inflate(R.layout.item_video_footer, recyClidfragment, false);
+                    recyClidfragment.addFooterView(footerView);
+//                    Toast.makeText(getActivity(),"已经到底了！"+num,Toast.LENGTH_SHORT).show();
+                }
+
                 break;
             case 1:
                 //推荐
-//                basePresenter.getListData("allRec");
+                //http://baobab.kaiyanapp.com/api/v5/index/tab/allRec?page=2&isTag=true&adIndex=6
+                basePresenter.getMainClidAddTJListData(page);
                 break;
             case 2:
                 //日报
                 //按照日期来拿数据
                 //http://baobab.kaiyanapp.com/api/v5/index/tab/feed?date=1539046800000&num=2
-
+                Toast.makeText(getActivity(), "已经到底了！" + num, Toast.LENGTH_SHORT).show();
                 break;
             case 3:
                 //创意 category/2  出现了403错误
                 //猜测一：服务器端可以判断是不是合法的访问方式
-//                basePresenter.getMainClidAddListData("category", "2",start);
+                Toast.makeText(getActivity(), "已经到底了！" + num, Toast.LENGTH_SHORT).show();
                 break;
             case 4:
                 //音乐
 //                basePresenter.getClidListData("category", "20");
+                Toast.makeText(getActivity(), "已经到底了！" + num, Toast.LENGTH_SHORT).show();
                 break;
             case 5:
                 //旅行
 //                basePresenter.getClidListData("category", "6");
+                Toast.makeText(getActivity(), "已经到底了！" + num, Toast.LENGTH_SHORT).show();
                 break;
             case 6:
                 //科普
 //                basePresenter.getClidListData("category", "32");
+                Toast.makeText(getActivity(), "已经到底了！" + num, Toast.LENGTH_SHORT).show();
                 break;
             case 7:
                 //搞笑
 //                basePresenter.getClidListData("category", "28");
+                Toast.makeText(getActivity(), "已经到底了！" + num, Toast.LENGTH_SHORT).show();
                 break;
             case 8:
                 //时尚
 //                basePresenter.getClidListData("category", "24");
+                Toast.makeText(getActivity(), "已经到底了！" + num, Toast.LENGTH_SHORT).show();
                 break;
         }
 

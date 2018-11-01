@@ -23,6 +23,11 @@ public class FocusClidWorksPresenter extends BasePresenter<FocusClidWorksFragmen
                 }
 
             }
+
+            @Override
+            public void requestComplete() {
+
+            }
         });
 
     }

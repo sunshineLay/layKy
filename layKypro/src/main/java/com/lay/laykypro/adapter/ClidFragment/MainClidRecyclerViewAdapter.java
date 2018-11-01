@@ -5,22 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dl7.player.media.IjkPlayerView;
 import com.lay.laykypro.R;
 import com.lay.laykypro.view.Activity.VideoActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 
 public class MainClidRecyclerViewAdapter extends BaseRecyclerViewAdapter<HashMap<String, Object>> {
@@ -32,7 +24,7 @@ public class MainClidRecyclerViewAdapter extends BaseRecyclerViewAdapter<HashMap
     }
 
     @Override
-    public void convert(ViewHolder holder, HashMap<String, Object> itemData,int position) {
+    public void convert(ViewHolder holder, HashMap<String, Object> itemData) {
         String type = (String) itemData.get("type");
         if(type.equals("horizontalScrollCard")){
             RecyclerView recyclerView=holder.getViewAtId(R.id.recy_banner_horizon);
@@ -66,11 +58,7 @@ public class MainClidRecyclerViewAdapter extends BaseRecyclerViewAdapter<HashMap
         }else if(type.equals("header5")){
             holder.setText(R.id.tv_header5,(String)itemData.get("text"));
         }else if(type.equals("footer2")){
-            if(position<tList.size()-1){
                 holder.setText(R.id.tv_footer2,(String) itemData.get("text"));
-            }else{
-                holder.itemView.setVisibility(View.GONE);
-            }
         }else if(type.equals("briefCard")){
            holder.setText(R.id.tv_merge_title,(String)itemData.get("title"))
                    .setText(R.id.tv_merge_description,(String)itemData.get("description"))

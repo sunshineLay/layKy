@@ -14,7 +14,7 @@ public class RecyVideoCollectionWibfAdapter extends BaseRecyclerViewAdapter<Hash
     }
 
     @Override
-    public void convert(ViewHolder holder, HashMap<String, Object> itemData,int position) {
+    public void convert(ViewHolder holder, HashMap<String, Object> itemData) {
         holder.setText(R.id.tv_videocollectionwibf_title,(String)itemData.get("title"))
         .setText(R.id.tv_videocollectionwibf_description,(String)itemData.get("description"))
         .setImageFromUrl(R.id.videocollectionwibf_img,(String)itemData.get("feed"));

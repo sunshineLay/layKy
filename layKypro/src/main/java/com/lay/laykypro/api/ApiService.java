@@ -1,14 +1,10 @@
 package com.lay.laykypro.api;
 
-import com.lay.laykypro.bean.DynamicInfoCardBean;
 import com.lay.laykypro.bean.FocusClidWorksBean;
-import com.lay.laykypro.bean.MainClidAddListBean;
 import com.lay.laykypro.bean.MainNoBean;
 import com.lay.laykypro.bean.VideoListBean;
 import com.lay.laykypro.bean.play.FocusworksItemPlayDataBean;
 import com.lay.laykypro.bean.play.VideoListItemBean;
-import com.lay.laykypro.bean.play.VideoPlayItemBean;
-import com.lay.laykypro.bean.text.FocusworksItemDataBean;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -70,15 +66,18 @@ public interface ApiService {
                                                                       @Query("last_channel") String last_channel,
                                                                       @Query("system_version_code") int system_version_code);
 
-    //http://baobab.kaiyanapp.com/api/v5/index/tab/discovery?start=0&num=5 发现
+    //http://baobab.kaiyanapp.com/api/v5/index/tab/discovery?start=0&num=5 发现 不能用了这个撤销。
     @GET("{path}")
     Observable<String> getMainClidAddDyListData(@Path("path")String path, @Query("start") int start, @Query("num") int num);
 
     //创意 http://baobab.kaiyanapp.com/api/v5/index/tab/category/2?start=5&num=5
     @GET("{root}/{path}")
-    Observable<String> getMainClidAddListData(@Path("root")String root, @Path("path")String path, @Query("start") int start, @Query("num") int num);
+    Observable<String> getMainClidAddCyListData(@Path("root") String root, @Path("path") String path, @Query("start") int start, @Query("num") int num);
 
 
+    //推荐：http://baobab.kaiyanapp.com/api/v5/index/tab/allRec?page=2&isTag=true&adIndex=6
+    @GET("allRec")
+    Observable<String> getMainClidAddTJListData(@Query("page") int page, @Query("isTag") boolean isTag, @Query("adIndex") int adIndex);
 
 
 }

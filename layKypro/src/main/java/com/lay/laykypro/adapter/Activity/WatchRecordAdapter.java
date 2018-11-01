@@ -16,7 +16,7 @@ public class WatchRecordAdapter extends BaseRecyclerViewAdapter<HashMap<String,O
     }
 
     @Override
-    public void convert(ViewHolder holder, HashMap<String, Object> itemData,int position) {
+    public void convert(ViewHolder holder, HashMap<String, Object> itemData) {
         holder.setText(R.id.tv_videosmallcard_title,(String)itemData.get("title"))
         .setText(R.id.tv_videosmallcard_category,(String)itemData.get("category"))
         .setImageFromUrl(R.id.img_videosmallcard_homepage,(String)itemData.get("imgurl"));

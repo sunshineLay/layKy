@@ -3,7 +3,6 @@ package com.lay.laykypro.model;
 import com.lay.laykypro.api.ApiService;
 import com.lay.laykypro.base.IBackRequestCallBack;
 import com.lay.laykypro.utils.ApiMethods;
-import com.lay.laykypro.utils.RetrofitUtils;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -47,7 +46,7 @@ public class MainClidFragModel implements MainClidModel {
 
                     @Override
                     public void onComplete() {
-
+                        stringIBackRequestCallBack.requestComplete();
                     }
                 });
     }
@@ -84,16 +83,15 @@ public class MainClidFragModel implements MainClidModel {
 
                     @Override
                     public void onComplete() {
-
+                        stringIBackRequestCallBack.requestComplete();
                     }
                 });
 
     }
 
     @Override
-    public void getMainClidAddDyListData(String path, int start, final IBackRequestCallBack<String> stringIBackRequestCallBack) {
-        //之前的写法太繁琐，此处优化RxJava+Retrofit
-        ApiMethods.getMainClidAddDyListData(path, start, new Observer<String>() {
+    public void getMainClidAddTJListData(int page, final IBackRequestCallBack<String> stringIBackRequestCallBack) {
+        ApiMethods.getMainClidAddTJListData(page, new Observer<String>() {
             @Override
             public void onSubscribe(Disposable d) {
 
@@ -102,6 +100,7 @@ public class MainClidFragModel implements MainClidModel {
             @Override
             public void onNext(String s) {
                 stringIBackRequestCallBack.requestSuccess(s);
+
             }
 
             @Override
@@ -112,30 +111,6 @@ public class MainClidFragModel implements MainClidModel {
             @Override
             public void onComplete() {
 
-            }
-        });
-    }
-
-    @Override
-    public void getMainClidAddListData(String root, String path, int start, final IBackRequestCallBack<String> stringIBackRequestCallBack) {
-        ApiMethods.getMainClidAddListData(root, path, start, new Observer<String>() {
-            @Override
-            public void onSubscribe(Disposable d) {
-
-            }
-
-            @Override
-            public void onNext(String s) {
-                stringIBackRequestCallBack.requestSuccess(s);
-            }
-
-            @Override
-            public void onError(Throwable e) {
-
-            }
-
-            @Override
-            public void onComplete() {
 
             }
         });

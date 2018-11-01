@@ -6,11 +6,11 @@
     <TextView
         android:id="@+id/tv_footer2"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_margin="@dimen/ten_dp"
+        android:layout_height="wrap_content"
         android:gravity="right"
         android:text="Keep"
         android:textStyle="bold"
+        android:drawableRight="@mipmap/left"
         android:textSize="@dimen/tenf_dp"/>
 
 </RelativeLayout>
