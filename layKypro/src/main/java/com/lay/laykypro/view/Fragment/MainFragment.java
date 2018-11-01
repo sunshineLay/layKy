@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,11 +16,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import com.lay.laykypro.R;
 import com.lay.laykypro.adapter.Fragment.MainClidFragmentViewPagerAdapter;
 import com.lay.laykypro.view.MainFragmentClid.MainClidFragment;
-
 
 import java.util.ArrayList;
 
@@ -37,7 +34,7 @@ public class MainFragment extends Fragment implements View.OnClickListener,ViewP
     private ViewPager vpFragMain;
 //    public MainFragment(){}
     //Title 初始化
-    private String[] titles=new String[]{"发现","推荐","日报","创意","音乐","旅行","科普","搞笑","时尚"};
+private String[] titles = new String[]{"发现", "推荐", "创意", "音乐", "旅行", "科普", "搞笑", "时尚"};
 
     private static final String TAG="TAG";
     @Nullable

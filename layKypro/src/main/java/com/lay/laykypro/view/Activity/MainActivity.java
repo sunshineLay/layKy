@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lay.laykypro.R;
+import com.lay.laykypro.view.AppManager;
 import com.lay.laykypro.view.Fragment.FocusFragment;
 import com.lay.laykypro.view.Fragment.MainFragment;
 import com.lay.laykypro.view.Fragment.MyFragment;
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //        Log.e(TAG, "onCreate: "+getClass().getSimpleName() );
+        AppManager.getInstance().addActivity(this);
 
         initView();
 
@@ -188,6 +190,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if(keyCode==KeyEvent.KEYCODE_BACK){
                 if(!isExit){
                     Toast.makeText(this,"再按一次退出",Toast.LENGTH_SHORT).show();
+
                     isExit=true;
                     handler.sendEmptyMessageDelayed(0,2000);
                 }else{
@@ -198,5 +201,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onKeyDown(keyCode, event);
     }
 
-
+    @Override
+    public void finish() {
+        super.finish();
+        AppManager.getInstance().AppExit(this);
+    }
 }

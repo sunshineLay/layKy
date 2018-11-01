@@ -17,6 +17,7 @@ import com.lay.laykypro.adapter.ClidFragment.WrapRecyclerView;
 import com.lay.laykypro.base.BaseActivity;
 import com.lay.laykypro.base.BaseView;
 import com.lay.laykypro.presenter.WatchListDataPresenter;
+import com.lay.laykypro.view.AppManager;
 
 import java.util.HashMap;
 import java.util.List;
@@ -25,7 +26,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-//实现“观看记录的功能”
+//实现“观看记录的功能”  换成ListView 实现分页功能。
 public class WatchRecordActivity extends BaseActivity<BaseView, WatchListDataPresenter> implements WatchInter {
 
     private static final String TAG = WatchRecordActivity.class.getSimpleName();
@@ -33,16 +34,21 @@ public class WatchRecordActivity extends BaseActivity<BaseView, WatchListDataPre
     TextView recyTitleWatchrecord;
     @BindView(R.id.tv_watch_empty)
     TextView tvWatchEmpty;
-    @BindView(R.id.recy_watchrecord)
+    @BindView(R.id.wrapRecy_watchrecord)
     WrapRecyclerView recyWatchrecord;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_watchrecord);
         ButterKnife.bind(this);
+
+        AppManager.getInstance().addActivity(this);
+
         basePresenter.getWatchListData(this);
     }
+
 
     @Override
     public WatchListDataPresenter getBasePresenter() {
@@ -102,6 +108,7 @@ public class WatchRecordActivity extends BaseActivity<BaseView, WatchListDataPre
         View footerView = LayoutInflater.from(this).inflate(R.layout.item_video_footer, recyWatchrecord, false);
         recyWatchrecord.addFooterView(footerView);
 
+
         recyWatchrecord.addItemDecoration(new MainClidItemDecoration(this, R.drawable.itemdecoration));
 
     }
@@ -116,5 +123,7 @@ public class WatchRecordActivity extends BaseActivity<BaseView, WatchListDataPre
     public void finish() {
         super.finish();
         overridePendingTransition(R.anim.anim_in_main, R.anim.anim_out_main);
+
+        AppManager.getInstance().finishActivity();
     }
 }

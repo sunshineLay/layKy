@@ -11,10 +11,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 import com.lay.laykypro.R;
 import com.lay.laykypro.utils.ApiPics;
 import com.lay.laykypro.utils.TimeAsyncTask;
+import com.lay.laykypro.view.AppManager;
 
 import java.io.IOException;
 
@@ -46,6 +46,9 @@ public class StartActivity extends Activity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_startup);
+
+        AppManager.getInstance().addActivity(this);
+
         btnStartup = (Button) findViewById(R.id.btn_startup);
         tvTime = (TextView) findViewById(R.id.tv_bian_startup);
         imgStart = (ImageView) findViewById(R.id.img_startup);
@@ -90,11 +93,6 @@ public class StartActivity extends Activity{
         return  call;
     }
 
-    private void initData01() {
-        //本地图片设置
-        imgStart.setImageResource(R.mipmap.kyy);
-    }
-
     private void initData(Call call) {
         //网络图片设置
 
@@ -130,4 +128,9 @@ public class StartActivity extends Activity{
         });
     }
 
+    @Override
+    public void finish() {
+        super.finish();
+        AppManager.getInstance().finishActivity();
+    }
 }

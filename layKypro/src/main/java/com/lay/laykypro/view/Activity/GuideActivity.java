@@ -12,12 +12,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.lay.laykypro.R;
+import com.lay.laykypro.view.AppManager;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 //注意：引导页基本功能已经结束；但是还是需要写一些东西，
 //引导页只在第一次使用的时候进入；
@@ -35,6 +33,8 @@ public class GuideActivity extends Activity  implements ViewPager.OnPageChangeLi
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guide);
+
+        AppManager.getInstance().addActivity(this);
 
         initData();
         initDots();
@@ -160,5 +160,9 @@ public class GuideActivity extends Activity  implements ViewPager.OnPageChangeLi
         }
     }
 
-
+    @Override
+    public void finish() {
+        super.finish();
+        AppManager.getInstance().finishActivity();
+    }
 }

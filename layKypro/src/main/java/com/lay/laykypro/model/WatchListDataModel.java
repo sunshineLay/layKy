@@ -19,10 +19,16 @@ public class WatchListDataModel implements WatchListDataInter {
         //sqlite
         WatchRecordSqliteHelper watchRecordSqliteHelper = new WatchRecordSqliteHelper(context);
         SQLiteDatabase watchSql = watchRecordSqliteHelper.getReadableDatabase();
+        //第一种，不分页
         String sql="select * from watchrecord";
         //select * from 表名;
-//        Cursor cursor = watchSql.query("watchrecord", new String[]{"imgurl","title","category","oldid","type"},null, null, null, null, null, null);
+
         Cursor cursor = watchSql.rawQuery(sql, null);
+
+        //第二种，分页
+//        int index=(Count-1)*5;
+//        Cursor cursor = watchSql.rawQuery("select *from watchrecord limit ?,5",new String[]{index+""});
+
         while(cursor.moveToNext()){
             HashMap<String, Object> stringObjectHashMap = new HashMap<>();
             String imgurl=cursor.getString(cursor.getColumnIndex("IMGURL"));

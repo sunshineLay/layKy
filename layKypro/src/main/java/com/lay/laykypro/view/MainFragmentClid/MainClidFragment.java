@@ -614,30 +614,26 @@ public class MainClidFragment extends BaseFragment<BaseView, MainClidPresenter> 
                 basePresenter.getListData("allRec");
                 break;
             case 2:
-                //日报
-                basePresenter.getListData("feed");
-                break;
-            case 3:
                 //创意
                 basePresenter.getClidListData("category", "2");
                 break;
-            case 4:
+            case 3:
                 //音乐
                 basePresenter.getClidListData("category", "20");
                 break;
-            case 5:
+            case 4:
                 //旅行
                 basePresenter.getClidListData("category", "6");
                 break;
-            case 6:
+            case 5:
                 //科普
                 basePresenter.getClidListData("category", "32");
                 break;
-            case 7:
+            case 6:
                 //搞笑
                 basePresenter.getClidListData("category", "28");
                 break;
-            case 8:
+            case 7:
                 //时尚
                 basePresenter.getClidListData("category", "24");
                 break;

@@ -24,6 +24,7 @@ import com.lay.laykypro.base.BaseView;
 import com.lay.laykypro.bean.VideoListBean;
 import com.lay.laykypro.bean.play.VideoListItemBean;
 import com.lay.laykypro.presenter.VideoPresenter;
+import com.lay.laykypro.view.AppManager;
 
 import java.util.HashMap;
 import java.util.List;
@@ -50,6 +51,9 @@ public class VideoActivity extends BaseActivity<BaseView, VideoPresenter> implem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
         ButterKnife.bind(this);
+
+        AppManager.getInstance().addActivity(this);
+
         hashMap = initData();
         Integer id = (Integer) hashMap.get("id");
         String title = (String) hashMap.get("title");
@@ -241,6 +245,9 @@ public class VideoActivity extends BaseActivity<BaseView, VideoPresenter> implem
         return (V)view;
     }
 
-
-
+    @Override
+    public void finish() {
+        super.finish();
+        AppManager.getInstance().finishActivity();
+    }
 }
