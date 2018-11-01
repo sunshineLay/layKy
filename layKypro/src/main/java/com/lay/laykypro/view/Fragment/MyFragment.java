@@ -79,7 +79,9 @@ public class MyFragment extends Fragment {
         //点击这个textView 跳转到WRActivity
         Intent intent = new Intent(getActivity(), WatchRecordActivity.class);
         startActivity(intent);
+        getActivity().overridePendingTransition(R.anim.anim_in_watch, R.anim.anim_out_watch);
         //进场动画
+
 
     }
 }

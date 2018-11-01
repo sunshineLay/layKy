@@ -6,12 +6,10 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 import com.lay.laykypro.R;
 import com.lay.laykypro.view.Fragment.FocusFragment;
@@ -199,4 +197,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         return super.onKeyDown(keyCode, event);
     }
+
+
 }

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -110,6 +109,12 @@ public class WatchRecordActivity extends BaseActivity<BaseView, WatchListDataPre
     @OnClick(R.id.recy_title_watchrecord)
     public void onViewClicked() {
         //Activity 退场和进场动画
+        finish();
+    }
 
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.anim_in_main, R.anim.anim_out_main);
     }
 }
