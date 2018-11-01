@@ -163,6 +163,6 @@ public class GuideActivity extends Activity  implements ViewPager.OnPageChangeLi
     @Override
     public void finish() {
         super.finish();
-        AppManager.getInstance().finishActivity();
+//        AppManager.getInstance().finishActivity();
     }
 }

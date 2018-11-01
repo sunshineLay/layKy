@@ -14,6 +14,8 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
+
 /**
  * 基本改造
  * @param <T>
@@ -145,7 +147,10 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
          */
         public ViewHolder setImageFromUrl(int viewId,String imgUrl){
            ImageView imageView= getViewAtId(viewId);
-            Glide.with(imageView.getContext()).load(imgUrl).into(imageView);
+            Glide.with(imageView.getContext())
+                    .load(imgUrl)
+                    .transition(withCrossFade())
+                    .into(imageView);
             return this;
         }
 

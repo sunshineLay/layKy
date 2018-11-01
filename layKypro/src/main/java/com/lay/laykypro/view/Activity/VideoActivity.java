@@ -248,6 +248,6 @@ public class VideoActivity extends BaseActivity<BaseView, VideoPresenter> implem
     @Override
     public void finish() {
         super.finish();
-        AppManager.getInstance().finishActivity();
+//        AppManager.getInstance().finishActivity();
     }
 }

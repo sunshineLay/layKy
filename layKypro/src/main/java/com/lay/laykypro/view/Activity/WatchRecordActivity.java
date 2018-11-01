@@ -124,6 +124,6 @@ public class WatchRecordActivity extends BaseActivity<BaseView, WatchListDataPre
         super.finish();
         overridePendingTransition(R.anim.anim_in_main, R.anim.anim_out_main);
 
-        AppManager.getInstance().finishActivity();
+//        AppManager.getInstance().finishActivity();
     }
 }

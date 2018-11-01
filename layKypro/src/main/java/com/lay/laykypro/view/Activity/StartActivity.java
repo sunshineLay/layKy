@@ -131,6 +131,6 @@ public class StartActivity extends Activity{
     @Override
     public void finish() {
         super.finish();
-        AppManager.getInstance().finishActivity();
+//        AppManager.getInstance().finishActivity();
     }
 }
